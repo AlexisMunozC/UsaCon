@@ -8,5 +8,12 @@ class Student < ActiveRecord::Base
   has_many :applications
   has_many :contacts
   validates :control_number, :CURP, :name, :last_name, :mother_last_name, presence: true
-  
+
+  protected
+  def password_required? 
+    false 
+  end 
+  def email_required?
+    false
+  end
 end

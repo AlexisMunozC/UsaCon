@@ -24,6 +24,10 @@ ActiveRecord::Schema.define(version: 20180811053822) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end
@@ -50,6 +54,10 @@ ActiveRecord::Schema.define(version: 20180811053822) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
     t.string   "RFC",                                    null: false
     t.string   "name",                                   null: false
     t.string   "business_activity",                      null: false
@@ -95,14 +103,6 @@ ActiveRecord::Schema.define(version: 20180811053822) do
 
   add_index "groups", ["group"], name: "index_groups_on_group", unique: true, using: :btree
 
-  create_table "messages", force: true do |t|
-    t.integer  "contact_id",                       null: false
-    t.boolean  "emisor_is_student", default: true, null: false
-    t.text     "message",                          null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "professional_strengths", force: true do |t|
     t.integer  "departament_id", null: false
     t.text     "description",    null: false
@@ -119,8 +119,8 @@ ActiveRecord::Schema.define(version: 20180811053822) do
   add_index "services", ["description"], name: "index_services_on_description", unique: true, using: :btree
 
   create_table "students", force: true do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "email",                  default: ""
+    t.string   "encrypted_password",     default: ""
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -129,6 +129,10 @@ ActiveRecord::Schema.define(version: 20180811053822) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
     t.string   "control_number",                         null: false
     t.string   "CURP",                                   null: false
     t.string   "name",                                   null: false

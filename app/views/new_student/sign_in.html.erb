@@ -1,0 +1,8 @@
+<h2>Bienvenido Estudiante</h2>
+
+<%= form_for :sign_in_new_student, url: "sign_in_form" do |f| %>
+  <%= f.text_field :CURP, placeholder: "CURP"%>
+  <%= f.text_field :control_number, placeholder: "Número de Control"%>
+  <%= f.submit "Registrar"%>
+
+<% end %>

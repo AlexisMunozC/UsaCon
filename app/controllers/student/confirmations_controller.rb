@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Student::ConfirmationsController < Devise::ConfirmationsController
+  before_action :session_active
   # GET /resource/confirmation/new
   # def new
   #   super

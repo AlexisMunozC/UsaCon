@@ -13,5 +13,13 @@ class ApplicationController < ActionController::Base
     if current_administrator || current_student || current_company
       redirect_to :controller => '/home', :action => 'index'
     end
+    unless Student.where("control_number = ? ",session[:new_student]).first == nil
+      redirect_to controller: "/student/registrations", action: "new"
+    end
+  end
+  def session_active_2
+    if current_administrator || current_student || current_company
+      redirect_to :controller => '/home', :action => 'index'
+    end
   end
 end
