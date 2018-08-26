@@ -1,5 +1,5 @@
 class NewStudentController < ApplicationController
-  before_action :session_active, except: [:destroy]
+  before_action :session_active, except: [:destroy,:edit,:destroy]
   
   def sign_in
     
@@ -13,12 +13,19 @@ class NewStudentController < ApplicationController
       #p student.control_number
       session[:new_student] = student.control_number
       #p session[:new_student]
-      redirect_to controller: "/student/registrations", action: "new"
+      redirect_to controller: "/new_student", action: "edit"
     end
   end
   def destroy
     session[:new_student] = nil
-    redirect_to controller: '/new_student', action: 'sign_in'
+    render 'sign_in'
+  end
+  
+  def edit
+    #AQUI
+  end
+  def update
+    
   end
   
 end

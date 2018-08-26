@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
       redirect_to :controller => '/home', :action => 'index'
     end
     unless Student.where("control_number = ? ",session[:new_student]).first == nil
-      redirect_to controller: "/student/registrations", action: "new"
+      redirect_to controller: "/new_student", action: "edit"
     end
   end
   def session_active_2

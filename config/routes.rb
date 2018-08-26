@@ -8,5 +8,8 @@ Rails.application.routes.draw do
   get 'new_student/sign_in'
   post 'new_student/sign_in_form'
   delete 'new_student/destroy'
+  get 'new_student/edit'
+  put 'new_student/update'
+  
   devise_for :administrators, controllers: {sessions: 'administrator/sessions', registrations: 'administrator/registrations'}
 end

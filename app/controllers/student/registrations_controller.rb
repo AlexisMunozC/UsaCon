@@ -2,14 +2,18 @@
 
 class Student::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
-  before_action :session_active_2
+  #before_action :session_active_2, except: [:new]
   before_action :session_new_student
-  #before_action :configure_account_update_params, only: [:update]
+  before_action :configure_account_update_params, only: [:update]
 
   
   # GET /resource/sign_up
   def new
-    super
+    if current_administrator
+      super
+    else
+      redirect_to controller: "/home", action: "index"
+    end
   end
 
   # POST /resource
