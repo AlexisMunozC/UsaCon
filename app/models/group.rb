@@ -1,4 +1,4 @@
 class Group < ActiveRecord::Base
-  belongs_to :student
+  has_many :students
   validates :group, presence: true
 end
