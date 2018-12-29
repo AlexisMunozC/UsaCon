@@ -156,7 +156,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mysql2 (~> 0.3.18)
-  rack (>= 1.6.11)
+  rack
   rails (= 4.2.8)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
