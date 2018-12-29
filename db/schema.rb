@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180811053822) do
+ActiveRecord::Schema.define(version: 20181229055352) do
 
   create_table "administrators", force: :cascade do |t|
     t.string   "email",              limit: 255, null: false
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20180811053822) do
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
   end
+
+  add_index "administrators", ["email"], name: "index_administrators_on_email", unique: true, using: :btree
 
   create_table "applications", force: :cascade do |t|
     t.integer  "student_id", limit: 4,                 null: false
@@ -50,6 +52,9 @@ ActiveRecord::Schema.define(version: 20180811053822) do
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
   end
+
+  add_index "companies", ["RFC"], name: "index_companies_on_rfc", unique: true, using: :btree
+  add_index "companies", ["email"], name: "index_companies_on_email", unique: true, using: :btree
 
   create_table "contacts", force: :cascade do |t|
     t.integer  "company_id", limit: 4, null: false
@@ -118,7 +123,10 @@ ActiveRecord::Schema.define(version: 20180811053822) do
     t.datetime "updated_at",                                           null: false
   end
 
+  add_index "students", ["CURP"], name: "index_students_on_CURP", unique: true, using: :btree
+  add_index "students", ["control_number"], name: "index_students_on_control_number", unique: true, using: :btree
   add_index "students", ["departament_id"], name: "fk_rails_e2198e7418", using: :btree
+  add_index "students", ["email"], name: "index_students_on_email", unique: true, using: :btree
   add_index "students", ["group_id"], name: "fk_rails_92bb7a13fa", using: :btree
 
   create_table "vacants", force: :cascade do |t|
