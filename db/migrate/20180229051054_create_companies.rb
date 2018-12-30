@@ -1,7 +1,6 @@
 class CreateCompanies < ActiveRecord::Migration
   def change
     create_table :companies do |t|
-
       t.string :email, null:false
       t.string :password_encrypted, null:false
       t.string :RFC, null: false

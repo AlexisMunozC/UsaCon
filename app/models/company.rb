@@ -1,6 +1,6 @@
 require 'bcrypt'
-
 class Company < ActiveRecord::Base
+    
     has_many :vacancies
     has_many :contacts
     
@@ -14,5 +14,4 @@ class Company < ActiveRecord::Base
         @password = Password.create(new_password)
         self.password_encrypted = @password
     end
-
 end

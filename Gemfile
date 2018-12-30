@@ -31,6 +31,7 @@ gem 'spring',        group: :development
 gem 'bcrypt', '~> 3.1.7'
 
 gem "rack"
+gem 'safe_attributes'
 
 # Use unicorn as the app server
 # gem 'unicorn'
