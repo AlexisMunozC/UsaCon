@@ -26,4 +26,25 @@ class CompanyController < ApplicationController
         redirect_to action: "registrar"
         
     end
+    
+    
+    #VISTA INICIAR SESION
+    def ingresar
+        
+    end
+    #FUNCION INICIAR SESION    
+    def crear_ingreso
+        @params = params[:new_company_session]
+        company = Company.where("email = ?",@params[:email]).first
+        if company != nil
+            if company.password == @params[:password]
+                session[:company_session] = company.id
+            else
+                flash[:alert] = "Correo o contraseña son incorrectos"
+            end
+        else
+            flash[:alert] = "Correo o contraseña son incorrectos"
+        end
+        redirect_to action: "ingresar"
+    end
 end

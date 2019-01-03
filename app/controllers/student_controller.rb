@@ -36,8 +36,12 @@ class StudentController < ApplicationController
         student = Student.where("control_number = ?",@params[:control_number]).first
         if student != nil
             if student.password == @params[:password]
-                session[:student_session] = student.id    
+                session[:student_session] = student.id
+            else
+                flash[:alert] = "Tu número de control o contraseña son incorrectos"
             end
+        else
+            flash[:alert] = "Tu número de control o contraseña son incorrectos"
         end
         redirect_to action: "ingresar"
     end

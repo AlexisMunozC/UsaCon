@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-    root "student#registrar"
+    get 'index/index'
+    root "index#index"
+    
+    
     get "student/registrar"
     post "student/crear_registro"
     
@@ -9,6 +12,10 @@ Rails.application.routes.draw do
     get "company/registrar"
     post "company/crear_registro"
     
+    get "company/ingresar"
+    post "company/crear_ingreso"
     
+    get "administrator/ingresar"
+    post "administrator/crear_ingreso"
     
 end
