@@ -1,4 +1,4 @@
-<%= form_for :new_student, url: "student/crear_registro" do |f| %>
+<%= form_for :new_student, :url => {controller: "student", action: "crear_registro"} do |f| %>
     <%= f.label "Correo Electrónico" %>
     <%= f.text_field :email%>
     

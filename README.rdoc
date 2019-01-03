@@ -1,4 +1,4 @@
--Generar Vistas de Registro de Estudiante y Empresa
+*Generar Vistas de Registro de Estudiante y Empresa
 -Generar Vistas de Sesion de Estudiante, Empresa y Administrador
 -Crear Manejo de Sesiones
 -Probar Passwords encriptadas

@@ -7,7 +7,6 @@ class StudentController < ApplicationController
     
     #FUNCION REGISTRO
     def crear_registro
-        p params[:new_student]
         @params = params[:new_student]
         new_student = Student.new
         new_student.email =  @params[:email]
@@ -26,5 +25,20 @@ class StudentController < ApplicationController
         new_student.save
         
         redirect_to action: "registrar"
+    end
+    #VISTA INICIAR SESION
+    def ingresar 
+        
+    end
+    #FUNCION INICIAR SESION
+    def crear_ingreso
+        @params = params[:new_student_session]
+        student = Student.where("control_number = ?",@params[:control_number]).first
+        if student != nil
+            if student.password == @params[:password]
+                session[:student_session] = student.id    
+            end
+        end
+        redirect_to action: "ingresar"
     end
 end
