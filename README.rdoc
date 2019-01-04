@@ -1,8 +1,8 @@
 *Generar Vistas de Registro de Estudiante y Empresa
--Generar Vistas de Sesion de Estudiante, Empresa y Administrador
--Crear Manejo de Sesiones
--Probar Passwords encriptadas
--Generar Controlador de Vacantes
+*Generar Vistas de Sesion de Estudiante, Empresa y Administrador
+*Crear Manejo de Sesiones
+*Probar Passwords encriptadas
+*Generar Controlador de Vacantes
 -Generar Vista de Vacantes dependiendo de la sesion
 -Generar Vista de una vacantes con sus metodos para generar aplicaciones y contactos
 -Generar Seccion de Correos

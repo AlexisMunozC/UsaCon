@@ -1,4 +1,6 @@
 class CompanyController < ApplicationController
+    before_filter :ComprobarSesiones
+    
     #VISTA REGISTRO
     def registrar
         

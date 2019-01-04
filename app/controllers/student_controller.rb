@@ -1,4 +1,6 @@
 class StudentController < ApplicationController
+    before_filter :ComprobarSesiones
+    
     #VISTA REGISTRO 
     def registrar
         @especialidades = Departament.all 

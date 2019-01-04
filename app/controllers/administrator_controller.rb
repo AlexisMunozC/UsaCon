@@ -1,4 +1,6 @@
 class AdministratorController < ApplicationController
+    before_filter :ComprobarSesiones
+    
     #VISTA INICIAR SESION
     def ingresar
         
@@ -17,5 +19,12 @@ class AdministratorController < ApplicationController
             flash[:alert] = "Correo o contraseña son incorrectos"
         end
         redirect_to action: "ingresar"
+    end
+    #FUNCION REGISTRAR
+    def crear_registro
+       admin = Administrator.new
+       admin.email = "cbtis@gmail.com"
+       admin.password = "hola1234"
+       admin.save
     end
 end
