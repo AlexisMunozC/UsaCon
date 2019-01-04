@@ -1,12 +1,17 @@
-<%= form_for :new_student_session, :url => {controller: "student", action: "crear_ingreso"} do |f| %>
+<%= form_for :new_student_session, :url => {controller: "student", action: "crear_ingreso"}, html:{style:"max-width:700px", class: "m-5"} do |f| %>
+    <h2 class="text-muted">Bienvenido estudiante</h2>
     
-    <%= f.label "Número de Control"%>
-    <%= f.text_field :control_number%>
-
-    <%= f.label "Contraseña" %>
-    <%= f.password_field :password%>
-
-    <%= f.submit "Iniciar Sesión"%>
+    <div class="form-group">
+        <%= f.label "Número de Control"%>
+        <%= f.text_field :control_number, class: "form-control" %>
+    </div>
     
-    <%= link_to "Registrar", action: "registrar"%>
+    <div class="form-group">
+        <%= f.label "Contraseña"%>
+        <%= f.password_field :password,  class: "form-control" %>
+    </div>
+    
+    <%= f.submit "Iniciar Sesión", class: "w-100 my-2 btn btn-success"%>
+    
+    <%= link_to "Registrar", {action: "registrar"}, class: "w-100 my-2 btn btn-light"%>
 <% end %>
