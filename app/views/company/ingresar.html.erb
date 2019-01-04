@@ -1,11 +1,16 @@
-<%= form_for :new_company_session, :url => {controller: "company", action: "crear_ingreso"} do |f| %>
+<%= form_for :new_company_session, :url => {controller: "company", action: "crear_ingreso"}, html:{style:"max-width:700px", class: "m-5"} do |f| %>
+    <h2 class="text-muted">Bienvenido empresa</h2>
+    <div class="form-group">
+        <%= f.label "Correo Electrónico"%>
+        <%= f.text_field :email, class: "form-control"%>
+    </div>
     
-    <%= f.label "Correo Electrónico"%>
-    <%= f.text_field :email%>
-
-    <%= f.label "Contraseña" %>
-    <%= f.password_field :password%>
-
-    <%= f.submit "Iniciar Sesión"%>
-    <%= link_to "Registrar", action: "registrar"%>
+    <div class="form-group">
+        <%= f.label "Contraseña" %>
+        <%= f.password_field :password, class: "form-control"%>
+    </div>
+    
+    <%= f.submit "Iniciar Sesión", class: "w-100 my-2 btn btn-success"%>
+    <%= link_to "Registrar", {action: "registrar"}, class: "w-100 my-2 btn btn-light"%>
+    
 <% end %>

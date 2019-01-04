@@ -1,43 +1,69 @@
-<%= form_for :new_student, :url => {controller: "student", action: "crear_registro"} do |f| %>
-    <%= f.label "Correo Electrónico" %>
-    <%= f.text_field :email%>
+<%= form_for :new_student, :url => {controller: "student", action: "crear_registro"}, html:{style:"max-width:700px", class: "m-5"} do |f| %>
+    <h2 class="text-muted">Registro de estudiantes</h2>
     
-    <%= f.label "Número de Control"%>
-    <%= f.text_field :control_number%>
+    <div class="form-group">
+        <%= f.label "Correo Electrónico"%>
+        <%= f.text_field :email, class: "form-control" %>
+    </div>
     
-    <%= f.label "Nombre"%>
-    <%= f.text_field :name%>
+   <div class="form-group">
+        <%= f.label "Número de Control"%>
+        <%= f.text_field :control_number, class: "form-control" %>
+   </div>
+    <div class="form-group">
+        <%= f.label "Nombre"%>
+        <%= f.text_field :name, class: "form-control" %>
+    </div>
     
-    <%= f.label "Apellido Paterno"%>
-    <%= f.text_field :last_name%>
+    <div class="form-group">
+        <%= f.label "Apellido Paterno"%>
+        <%= f.text_field :last_name, class: "form-control" %>
+    </div>
     
-    <%= f.label "Apellido Materno"%>
-    <%= f.text_field :mother_last_name%>
+    <div class="form-group">
+        <%= f.label "Apellido Materno"%>
+        <%= f.text_field :mother_last_name, class: "form-control" %>
+    </div>
     
-    <%= f.label "CURP"%>
-    <%= f.text_field :CURP%>
+    <div class="form-group">
+        <%= f.label "CURP",class: "text-uppercase"%>
+        <%= f.text_field :CURP, class: "form-control" %>
+    </div>
     
-    <%= f.label "Especialidad"%>
-    <%= f.select :departament, options_from_collection_for_select(@especialidades,"id","description")%>
+    <div class="form-group">
+        <%= f.label "Especialidad"%>
+        <%= f.select :departament, options_from_collection_for_select(@especialidades,"id","description"),{}, {class: "form-control" }%>
+    </div>
     
-    <%= f.label "Grupo"%>
-    <%= f.select :group, options_from_collection_for_select(@grupos,"id","group")%>
+    <div class="form-group">
+        <%= f.label "Grupo"%>
+        <%= f.select :group, options_from_collection_for_select(@grupos,"id","group"),{}, {class: "form-control" }%>
+    </div>
     
-    <%= f.label "Número de Teléfono"%>
-    <%= f.text_field :phone_number%>
+    <div class="form-group">
+        <%= f.label "Número de Teléfono"%>
+        <%= f.text_field :phone_number, class: "form-control" %>
+    </div>
     
-    <%= f.label "Código Postal"%>
-    <%= f.text_field :zip_code%>
+    <div class="form-group">
+        <%= f.label "Código Postal"%>
+        <%= f.text_field :zip_code, class: "form-control" %>
+    </div>
     
-    <%= f.label "Escuela Anterior"%>
-    <%= f.text_field :previous_school%>
+    <div class="form-group">
+        <%= f.label "Escuela Anterior"%>
+        <%= f.text_field :previous_school, class: "form-control" %>
+    </div>
     
-    <%= f.label "Edad"%>
-    <%= f.number_field :age%>
+    <div class="form-group">
+        <%= f.label "Edad"%>
+        <%= f.number_field :age, class: "form-control" %>
+    </div>
 
-
-    <%= f.label "Contraseña" %>
-    <%= f.password_field :password%>
-
-    <%= f.submit "Registrar"%>
+    <div class="form-group">
+        <%= f.label "Contraseña" %>
+        <%= f.password_field :password, class: "form-control" %>
+    </div>
+    
+    <%= f.submit "Registrar", class: "btn btn-success w-100" %>
 <% end %>

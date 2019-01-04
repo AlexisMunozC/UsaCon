@@ -1,29 +1,29 @@
 Rails.application.routes.draw do
-    get 'index/index'
-    get "application/cerrar_sesiones"
+    get "Bienvenido", to:'index#index'
+    get "Salir", to:"application#cerrar_sesiones"
     root "index#index"
     
     #STUDENT
-        get "student/registrar"
+        get "Registro-Estudiantes", to: "student#registrar"
         post "student/crear_registro"
         
-        get "student/ingresar"
+        get "Estudiantes",to:"student#ingresar"
         post "student/crear_ingreso"
     
     #COMPANY
-        get "company/registrar"
+        get "Registro-Empresas" ,to: "company#registrar"
         post "company/crear_registro"
         
-        get "company/ingresar"
+        get "Empresas",to: "company#ingresar"
         post "company/crear_ingreso"
     
     #ADMIN
-        get "administrator/ingresar"
+        get "Admin", to: "administrator#ingresar"
         post "administrator/crear_ingreso"
         
         #TEMPORAAAAAAl
         get "administrator/crear_registro"
     
     #VACANT
-        get "vacant/mostrar"
+        get "Home" ,to: "vacant#mostrar"
 end

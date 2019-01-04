@@ -1,44 +1,71 @@
-<%= form_for :new_company, :url => {controller: "company", action: "crear_registro"} do |f| %>
-    <%= f.label "Correo Electrónico" %>
-    <%= f.text_field :email%>
+<%= form_for :new_company, :url => {controller: "company", action: "crear_registro"}, html:{style:"max-width:700px", class: "m-5"} do |f| %>
+    <h2 class="text-muted">Registro de empresas</h2>
     
-    <%= f.label "RFC"%>
-    <%= f.text_field :RFC%>
+    <div class="form-group">
+        <%= f.label "Correo Electrónico" %>
+        <%= f.text_field :email, class: "form-control"%>
+    </div>
     
-    <%= f.label "Nombre"%>
-    <%= f.text_field :name%>
+    <div class="form-group">
+        <%= f.label "RFC", class: "text-uppercase"%>
+        <%= f.text_field :RFC, class: "form-control"%>
+    </div>
     
-    <%= f.label "Giro"%>
-    <%= f.text_field :business_activity%>
+    <div class="form-group">
+        <%= f.label "Nombre"%>
+        <%= f.text_field :name, class: "form-control"%>
+    </div>
     
-    <%= f.label "Dirección"%>
-    <%= f.text_field :address%>
+    <div class="form-group">
+        <%= f.label "Giro"%>
+        <%= f.text_field :business_activity, class: "form-control"%>
+    </div>
     
-    <%= f.label "Código Postal"%>
-    <%= f.text_field :zip_code%>
+    <div class="form-group">
+        <%= f.label "Dirección"%>
+        <%= f.text_field :address, class: "form-control"%>
+    </div>
     
-    <%= f.label "Número de Teléfono"%>
-    <%= f.text_field :phone_number%>
+    <div class="form-group">
+        <%= f.label "Código Postal"%>
+        <%= f.text_field :zip_code, class: "form-control"%>
+    </div>
     
-    <%= f.label "Es una asociación civil"%>
-    <%= f.check_box :civil_association%>
+    <div class="form-group">
+        <%= f.label "Número de Teléfono"%>
+        <%= f.text_field :phone_number, class: "form-control"%>
+    </div>
     
-    <%= f.label "Nombre del Responsable"%>
-    <%= f.text_field :res_name%>
+    <div class="form-check form-group">
+        <%= f.check_box :civil_association, class: "form-check-input"%>
+        <%= f.label :civil_association, "Es una asociación civil", class: "form-check-label"%>
+    </div>
     
-    <%= f.label "Horario del Responsable "%>
-    <%= f.time_field :res_schedule_1%>
-    <%= f.time_field :res_schedule_2%>
+    <div class="form-group">
+        <%= f.label "Nombre del Responsable"%>
+        <%= f.text_field :res_name, class: "form-control"%>
+    </div>
     
-    <%= f.label "Teléfono del Responsable"%>
-    <%= f.text_field :res_phone_number%>
+    <div class="form-group row no-gutters">
+        <%= f.label "Horario del Responsable", class:"w-100"%>
+        <%= f.time_field :res_schedule_1, class: "form-control col mx-2 p-1"%>
+        <%= f.time_field :res_schedule_2, class: "form-control col mx-2 p-1"%>
+    </div>
     
-    <%= f.label "Correo del Responsable"%>
-    <%= f.text_field :res_email%>
+    <div class="form-group">
+        <%= f.label "Teléfono del Responsable"%>
+        <%= f.text_field :res_phone_number, class: "form-control"%>
+    </div>
+    
+    <div class="form-group">
+        <%= f.label "Correo del Responsable"%>
+        <%= f.text_field :res_email, class: "form-control"%>
+    </div>
 
+    <div class="form-group">
+        <%= f.label "Contraseña" %>
+        <%= f.password_field :password, class: "form-control"%>
+    </div>
 
-    <%= f.label "Contraseña" %>
-    <%= f.password_field :password%>
-
-    <%= f.submit "Registrar"%>
+    <%= f.submit "Registrar", class: "w-100 my-2 btn btn-success"%>
 <% end %>

@@ -1,8 +1,17 @@
-<label>Ingresar como estudiante</label>
-<%= link_to  "Aqui", controller:"student", action:"ingresar"%>
 
-<label>Ingresar como empresa</label>
-<%= link_to  "Aqui", controller:"company", action:"ingresar"%>
-
-<label>Ingresar como administrador</label>
-<%= link_to  "Aqui", controller:"administrator", action:"ingresar"%>
+<div style="max-width:700px">
+    <div class="form-group m-5">
+        <h3 class="text-muted" >Ingresar como estudiante</h3>
+        <%= link_to  "Aqui", {controller:"student", action:"ingresar"}, class: "btn btn-success w-100" %>
+    </div>
+    
+    <div class="form-group m-5">
+        <h3 class="text-muted" >Ingresar como empresa</h3>
+        <%= link_to  "Aqui", {controller:"company", action:"ingresar"}, class: "btn btn-info w-100"%>
+    </div>
+    
+    <div class="form-group m-5">
+        <h3 class="text-muted" >Ingresar como administrador</h3>
+        <%= link_to  "Aqui", {controller:"administrator", action:"ingresar"}, class: "btn btn-dark w-100"%>
+    </div>
+</div>
