@@ -1,0 +1,12 @@
+<%= form_for :new_student_session, :url => {controller: "student", action: "crear_ingreso"} do |f| %>
+    
+    <%= f.label "Número de Control"%>
+    <%= f.text_field :control_number%>
+
+    <%= f.label "Contraseña" %>
+    <%= f.password_field :password%>
+
+    <%= f.submit "Iniciar Sesión"%>
+    
+    <%= link_to "Registrar", action: "registrar"%>
+<% end %>

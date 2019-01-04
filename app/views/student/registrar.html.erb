@@ -1,0 +1,43 @@
+<%= form_for :new_student, :url => {controller: "student", action: "crear_registro"} do |f| %>
+    <%= f.label "Correo Electrónico" %>
+    <%= f.text_field :email%>
+    
+    <%= f.label "Número de Control"%>
+    <%= f.text_field :control_number%>
+    
+    <%= f.label "Nombre"%>
+    <%= f.text_field :name%>
+    
+    <%= f.label "Apellido Paterno"%>
+    <%= f.text_field :last_name%>
+    
+    <%= f.label "Apellido Materno"%>
+    <%= f.text_field :mother_last_name%>
+    
+    <%= f.label "CURP"%>
+    <%= f.text_field :CURP%>
+    
+    <%= f.label "Especialidad"%>
+    <%= f.select :departament, options_from_collection_for_select(@especialidades,"id","description")%>
+    
+    <%= f.label "Grupo"%>
+    <%= f.select :group, options_from_collection_for_select(@grupos,"id","group")%>
+    
+    <%= f.label "Número de Teléfono"%>
+    <%= f.text_field :phone_number%>
+    
+    <%= f.label "Código Postal"%>
+    <%= f.text_field :zip_code%>
+    
+    <%= f.label "Escuela Anterior"%>
+    <%= f.text_field :previous_school%>
+    
+    <%= f.label "Edad"%>
+    <%= f.number_field :age%>
+
+
+    <%= f.label "Contraseña" %>
+    <%= f.password_field :password%>
+
+    <%= f.submit "Registrar"%>
+<% end %>

@@ -1,0 +1,10 @@
+<%= form_for :new_admin_session, :url => {controller: "administrator", action: "crear_ingreso"} do |f| %>
+    
+    <%= f.label "Correo Electrónico"%>
+    <%= f.text_field :email%>
+
+    <%= f.label "Contraseña" %>
+    <%= f.password_field :password%>
+
+    <%= f.submit "Iniciar Sesión"%>
+<% end %>

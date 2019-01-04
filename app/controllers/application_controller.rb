@@ -1,5 +1,23 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
+    
+    def cerrar_sesiones
+       session[:admin_session] = nil
+       session[:student_session] = nil
+       session[:company_session] = nil
+       redirect_to controller: "index", action: "index"
+    end
+    
+    
+    def ComprobarSesiones
+        if session[:admin_session] != nil || session[:student_session] != nil || session[:company_session] != nil 
+            redirect_to controller: "vacant", action: "mostrar" 
+        end
+    end
+    
+    def ComprobarNoSesiones
+        if session[:admin_session] == nil && session[:student_session] == nil && session[:company_session] == nil 
+            redirect_to controller: "index", action: "index" 
+        end 
+    end
+
 end

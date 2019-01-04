@@ -1,0 +1,11 @@
+<%= form_for :new_company_session, :url => {controller: "company", action: "crear_ingreso"} do |f| %>
+    
+    <%= f.label "Correo Electrónico"%>
+    <%= f.text_field :email%>
+
+    <%= f.label "Contraseña" %>
+    <%= f.password_field :password%>
+
+    <%= f.submit "Iniciar Sesión"%>
+    <%= link_to "Registrar", action: "registrar"%>
+<% end %>

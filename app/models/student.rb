@@ -1,11 +1,21 @@
+require 'bcrypt'
+
 class Student < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-  has_one :departament
-  has_one :group
-  has_many :applications
-  has_many :contacts
-  validates :control_number, :CURP, :name, :last_name, :mother_last_name, presence: true
+    has_many :applications
+    has_many :contacts
+    
+    belongs_to :departament
+    belongs_to :group
+    
+    include BCrypt
+
+    def password
+        @password ||= Password.new(password_encrypted)
+    end
+    
+    def password=(new_password)
+        @password = Password.create(new_password)
+        self.password_encrypted = @password
+    end
+
 end

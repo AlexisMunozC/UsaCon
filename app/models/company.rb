@@ -1,10 +1,17 @@
+require 'bcrypt'
 class Company < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-  has_many :vacancies
-  has_many :contacts
-  validates :RFC, :name, :business_activity, :address, :zip_code, :phone_number, :civil_association,
-            :res_name, :res_schedule, :res_phone_number, :res_email, presence: true
+    
+    has_many :vacancies
+    has_many :contacts
+    
+    include BCrypt
+
+    def password
+        @password ||= Password.new(password_encrypted)
+    end
+    
+    def password=(new_password)
+        @password = Password.create(new_password)
+        self.password_encrypted = @password
+    end
 end

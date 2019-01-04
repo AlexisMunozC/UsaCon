@@ -1,0 +1,44 @@
+<%= form_for :new_company, :url => {controller: "company", action: "crear_registro"} do |f| %>
+    <%= f.label "Correo Electrónico" %>
+    <%= f.text_field :email%>
+    
+    <%= f.label "RFC"%>
+    <%= f.text_field :RFC%>
+    
+    <%= f.label "Nombre"%>
+    <%= f.text_field :name%>
+    
+    <%= f.label "Giro"%>
+    <%= f.text_field :business_activity%>
+    
+    <%= f.label "Dirección"%>
+    <%= f.text_field :address%>
+    
+    <%= f.label "Código Postal"%>
+    <%= f.text_field :zip_code%>
+    
+    <%= f.label "Número de Teléfono"%>
+    <%= f.text_field :phone_number%>
+    
+    <%= f.label "Es una asociación civil"%>
+    <%= f.check_box :civil_association%>
+    
+    <%= f.label "Nombre del Responsable"%>
+    <%= f.text_field :res_name%>
+    
+    <%= f.label "Horario del Responsable "%>
+    <%= f.time_field :res_schedule_1%>
+    <%= f.time_field :res_schedule_2%>
+    
+    <%= f.label "Teléfono del Responsable"%>
+    <%= f.text_field :res_phone_number%>
+    
+    <%= f.label "Correo del Responsable"%>
+    <%= f.text_field :res_email%>
+
+
+    <%= f.label "Contraseña" %>
+    <%= f.password_field :password%>
+
+    <%= f.submit "Registrar"%>
+<% end %>

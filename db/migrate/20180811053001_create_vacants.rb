@@ -1,10 +1,10 @@
 class CreateVacants < ActiveRecord::Migration
   def change
     create_table :vacants do |t|
-      t.references :company, null: false
+      t.references :company, null: false, :foreign_key => {on_update: :cascade, on_delete: :cascade}
       t.string :name, null: false
-      t.references :departament, null: false
-      t.references :service, null: false
+      t.references :departament, null: false, :foreign_key => {on_update: :cascade, on_delete: :cascade}
+      t.references :service, null: false, :foreign_key => {on_update: :cascade, on_delete: :cascade}
       t.text :function, null: false
       t.integer :vacancy_numbers, null: false
       t.string :working_hours, null: false
