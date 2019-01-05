@@ -1,0 +1,23 @@
+@import "variables.css.scss";
+
+.menu{
+    position: fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    
+    width:100%;
+    height: $MenuHeight;
+    
+    background: $Dark;
+    max-width:700px;
+    margin:0 auto;
+}
+.menu .options{
+    margin:5px;
+    padding:10px;
+    text-align:center;
+    height:100%;
+    display: inline-block !important;
+    background: $Light;
+}

@@ -1,0 +1,8 @@
+@import 'variables.css.scss';
+
+.body{
+    min-height:100vh;
+}
+.container{
+    min-height:calc(100vh - #{$MenuHeight});
+}

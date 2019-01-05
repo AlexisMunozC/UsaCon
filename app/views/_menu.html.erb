@@ -1,0 +1,15 @@
+<div class="menu p-3">
+    <div class="row no-gutters h-100">
+        <%= link_to "Inicio",{}, class:"col options"%>
+        <% unless session[:student_session] == nil%>
+            <%= link_to "Generar Curriculum",{}, class:"col options"%>
+        <% end %>
+        <% unless session[:company_session] == nil%>
+            <%= link_to "Generar Vacante",{}, class:"col options"%>
+        <% end %>
+        <%= link_to "Mensajes",{}, class:"col options"%>
+        <%= link_to "Solicitudes",{}, class:"col options"%>
+        <%= link_to "Ajustes",{}, class:"col options"%>
+        <%= link_to "Cerrar Sesion", {controller: "application", action:"cerrar_sesiones"}, class:"col options"%>
+    </div>
+</div>
